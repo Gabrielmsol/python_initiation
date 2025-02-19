@@ -4,7 +4,7 @@
 # isso mantem o processo mais organizado 
 # %%
 from app.utils.email_utils import process_email # -> list[dict]
-from app.utils.openai_utils import analyze_with_ai # -> dict
+from app.utils.google_utils import analyze_with_ai # -> dict
 from app.utils.sharepoint_utils import upload_file, download_file
 from app.utils.excel_util import upload_to_excel
 from time import sleep
