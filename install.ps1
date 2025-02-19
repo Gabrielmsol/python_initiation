@@ -82,7 +82,7 @@ if ($pythonInstalled) {
     Write-Host "Instalado"
     Write-Host "Ativando a bosta do env"
     Start-Process -FilePath "poetry" -ArgumentList "config virtualenvs.in-project true" -Wait
-    Start-Process -FilePath "poetry" -ArgumentList "shell" -Wait
+    Start-Process -FilePath "poetry" -ArgumentList "env activate" -Wait
     Write-Host "Ativado."
     Write-Host "Pronto cabo, Agora roda poetry -run app.py"
 
@@ -118,7 +118,7 @@ if ($pythonInstalled) {
     Write-Host "Instalado"
     Write-Host "Ativando a bosta do env"
     Start-Process -FilePath "poetry" -ArgumentList "config virtualenvs.in-project true" -Wait
-    Start-Process -FilePath "poetry" -ArgumentList "shell" -Wait
+    Start-Process -FilePath "poetry" -ArgumentList "env activate" -Wait
     Write-Host "Ativado."
     Write-Host "Pronto cabo, Agora roda poetry -run app.py"
 }
