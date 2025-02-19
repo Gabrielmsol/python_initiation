@@ -31,7 +31,7 @@ poetry init
 ```
 - inicia um venv
 ```powershell
-poetry shell
+poetry env activate
 ```
 - Instala dependencias
 ```powershell
