@@ -95,7 +95,7 @@ def get_email_body(msg: Message) -> str:
         file_folder_path = "static/etc"
         os.makedirs(file_folder_path, exist_ok=True)
 
-        base_filename = f"{file_folder_path}'/email_body.html'"
+        base_filename = f"{file_folder_path}/email_body.html'"
         file_name = base_filename
 
         counter = 1
