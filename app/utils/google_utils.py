@@ -15,6 +15,7 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 instructions = """
+The please write down in brazilian portuguese, follow the instructions:
 You will receive data in JSON format. Please parse the data and organize it into a response following this structure:
 {
     "email": {
@@ -35,9 +36,9 @@ client = genai.Client(api_key=GOOGLE_API_KEY)
 
 
 def analyze_with_ai(data: dict) -> dict:
-    _instructions = f"{instructions}\n{str(data)}"
     response = client.models.generate_content(
-        model="gemini-2.0-flash-001", contents=_instructions
+        model="gemini-2.0-flash-001",
+        contents=[instructions, str(data)]
     )
     return response.to_json_dict()
     
