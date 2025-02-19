@@ -77,13 +77,13 @@ if ($pythonInstalled) {
     Set-Location -Path $scriptDirectory
 
     # Instala dependencias do python
-    Write-Host "Instalando dependencias do python"
-    Start-Process -FilePath "poetry" -ArgumentList "install" -Wait
-    Write-Host "Instalado"
     Write-Host "Ativando a bosta do env"
     Start-Process -FilePath "poetry" -ArgumentList "config virtualenvs.in-project true" -Wait
     Start-Process -FilePath "poetry" -ArgumentList "env activate" -Wait
     Write-Host "Ativado."
+    Write-Host "Instalando dependencias do python"
+    Start-Process -FilePath "poetry" -ArgumentList "install" -Wait
+    Write-Host "Instalado"
     Write-Host "Pronto cabo, Agora roda poetry -run app.py"
 
 } else {
@@ -113,13 +113,14 @@ if ($pythonInstalled) {
     $scriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
     Set-Location -Path $scriptDirectory
 
-    Write-Host "Fazendo poetry usar a merda das dependencias do meu programa."
-    Start-Process -FilePath "poetry" -ArgumentList "install" -Wait
-    Write-Host "Instalado"
+
     Write-Host "Ativando a bosta do env"
     Start-Process -FilePath "poetry" -ArgumentList "config virtualenvs.in-project true" -Wait
     Start-Process -FilePath "poetry" -ArgumentList "env activate" -Wait
     Write-Host "Ativado."
+    Write-Host "Fazendo poetry usar a merda das dependencias do meu programa."
+    Start-Process -FilePath "poetry" -ArgumentList "install" -Wait
+    Write-Host "Instalado"
     Write-Host "Pronto cabo, Agora roda poetry -run app.py"
 }
 
